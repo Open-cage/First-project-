@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Equation Grapher</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="app.webmanifest">
+</head>
+<body>
+    <div class="app-container">
+        <h1>Equation Grapher</h1>
+        
+        <div class="input-section">
+            <input type="text" id="equation-input" placeholder="Enter equation (e.g., x^2 + 3*sin(x))">
+            <button id="plot-button">Plot</button>
+            <button id="clear-button">Clear</button>
+        </div>
+        
+        <div class="graph-container">
+            <canvas id="graph-canvas"></canvas>
+        </div>
+        
+        <div class="controls">
+            <div class="range-control">
+                <label for="x-min">X Min:</label>
+                <input type="number" id="x-min" value="-10" step="0.1">
+                
+                <label for="x-max">X Max:</label>
+                <input type="number" id="x-max" value="10" step="0.1">
+                
+                <label for="y-min">Y Min:</label>
+                <input type="number" id="y-min" value="-10" step="0.1">
+                
+                <label for="y-max">Y Max:</label>
+                <input type="number" id="y-max" value="10" step="0.1">
+            </div>
+            
+            <div class="appearance-control">
+                <label for="line-color">Line Color:</label>
+                <input type="color" id="line-color" value="#3366ff">
+                
+                <label for="line-width">Line Width:</label>
+                <input type="range" id="line-width" min="1" max="5" value="2">
+            </div>
+        </div>
+    </div>
+    
+    <script src="math.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
